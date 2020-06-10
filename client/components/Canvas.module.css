@@ -1,0 +1,61 @@
+.myWrapper {
+  position: relative;
+}
+
+.word {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.clear {
+  height: 50px;
+}
+
+.newWord {
+  height: 60px;
+  margin-right: 20px;
+}
+
+.buttons {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  z-index: 100;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.timer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.notification {
+  position: absolute;
+  height: 300px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 150px;
+  text-align: center;
+  opacity: 1;
+  animation: fadeout 1500ms;
+  color: darkgray;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

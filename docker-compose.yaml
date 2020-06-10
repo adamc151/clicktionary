@@ -1,0 +1,30 @@
+version: "3"
+services:
+  nginx:
+    restart: always
+    image: pictionary-nginx
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3050:80"
+  api:
+    restart: always
+    image: pictionary-api
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./backend
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+  client:
+    image: pictionary-client
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+    depends_on:
+      - api

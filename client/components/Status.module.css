@@ -1,0 +1,40 @@
+.status {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+  float: left;
+}
+
+.statusOrange {
+  margin: 0 auto;
+  width: 16px;
+  height: 16px;
+  background-color: #ffa400;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #976700fc 0 -1px 9px,
+    #ffbb00 0 2px 12px;
+}
+
+.statusGreen {
+  margin: 0 auto;
+  width: 16px;
+  height: 16px;
+  background-color: #abff00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px,
+    #89ff00 0 2px 12px;
+}
+
+.playerReadyWrapper {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerReady {
+  text-align: center;
+}
