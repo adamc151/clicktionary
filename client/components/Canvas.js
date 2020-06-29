@@ -157,7 +157,7 @@ class Canvas extends Component {
       canvasWidth: this.state.w,
       canvasHeight: this.state.h,
       disabled: !this.state.sending,
-      imgSrc: "",
+      imgSrc: "/background.jpg",
       saveData: null,
       immediateLoading: false,
       hideInterface: true,

@@ -1,4 +1,6 @@
-module.exports = {
+const withImages = require("next-images");
+
+module.exports = withImages({
   webpackDevMiddleware: (config) => {
     config.watchOptions = {
       poll: 1000,
@@ -8,4 +10,4 @@ module.exports = {
     return config;
   },
   poweredByHeader: false,
-};
+});

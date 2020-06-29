@@ -15,7 +15,7 @@
   background: powderblue;
   font: 500 16px "Montserrat", sans-serif;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 25px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   /* -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
@@ -63,9 +63,12 @@
   justify-content: center;
   background: white;
   cursor: pointer;
-  font: 500 12px "Montserrat", sans-serif;
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 20px;
+  /* font: 500 12px "Montserrat", sans-serif; */
   border: 1px solid black;
   text-transform: uppercase;
+  border-radius: 20px;
 }
 
 .open {

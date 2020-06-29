@@ -13,6 +13,10 @@ export default function Home() {
 
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
 
       <main>

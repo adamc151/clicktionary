@@ -3,6 +3,7 @@ import styles from "./HomePage.module.css";
 import { useRouter } from "next/router";
 import CanvasDraw from "react-canvas-draw";
 import logo from "./logo.json";
+import background from "./background5.jpg";
 
 function usePrevious(value) {
   const ref = useRef();
@@ -12,7 +13,7 @@ function usePrevious(value) {
   return ref.current;
 }
 
-const HomePage: React.FC = ({}) => {
+const HomePage = ({}) => {
   const history = useRouter();
   const canvasEl = useRef(null);
 
@@ -64,15 +65,12 @@ const HomePage: React.FC = ({}) => {
       {/* <img className={styles.clicktionary} src={"/clicktionary.png"} /> */}
 
       <div className={styles.homePageWrapper}>
-        <div>Online drawing game</div>
+        <div className={styles.onlineDrawingGame}>Online drawing game</div>
         <div>
           Get together with your friends and guess what they are drawing before
           the time runs out!
         </div>
-        <img
-          className={styles.diagram}
-          src={"/clicktionary-diagram-transparent.svg"}
-        ></img>
+        <img className={styles.diagram} src={"/diagram3.svg"}></img>
         <div className={styles.urlTextWrapper}>
           <div className={styles.text}>
             Share this url with your friends and hit PLAY
@@ -80,16 +78,16 @@ const HomePage: React.FC = ({}) => {
 
           <div className={styles.urlWrapper}>
             <a className={styles.url} href={urlPath + urlAppend}>
-              clicktionary.com/
+              {urlPath + urlAppend}
             </a>
-            <input
+            {/* <input
               className={styles.urlAppend}
               type="text"
               defaultValue={urlAppend}
               onChange={(e) => {
                 setUrlAppend(`${e.target.value}`);
               }}
-            />
+            /> */}
           </div>
         </div>
 

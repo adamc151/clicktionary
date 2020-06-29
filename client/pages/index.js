@@ -12,6 +12,10 @@ export default function Homepage() {
           href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
 
       <main>
