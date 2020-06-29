@@ -156,7 +156,7 @@ class Canvas extends Component {
       hideGrid: false,
       canvasWidth: this.state.w,
       canvasHeight: this.state.h,
-      disabled: false,
+      disabled: !this.state.sending,
       imgSrc: "",
       saveData: null,
       immediateLoading: false,

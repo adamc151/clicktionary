@@ -1,20 +1,21 @@
 import Head from "next/head";
+import MyHomePage from "../components/HomePage";
 
 export default function Homepage() {
-  const url = `/${Math.random().toString(36).substring(7)}`;
-
   return (
     <div className="container">
       <Head>
         <meta charset="UTF-8" />
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <main>
-        <div>Share this url with your friends and hit PLAY</div>
-        <a href={url}>{url}</a>
-        <a href={url}>PLAY</a>
+        <MyHomePage />
       </main>
 
       <style jsx>{`
@@ -23,6 +24,9 @@ export default function Homepage() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          left: 0;
+          right: 0;
+          position: fixed;
         }
 
         main {
@@ -31,10 +35,6 @@ export default function Homepage() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-        }
-
-        div {
-          padding: 20px;
         }
 
         footer {

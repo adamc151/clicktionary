@@ -1,7 +1,8 @@
 .modal {
   position: absolute;
   margin: auto;
-  top: 30%;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   width: 70%;
@@ -12,14 +13,47 @@
   height: 250px;
   padding: 10px;
   background: powderblue;
+  font: 500 16px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  /* -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out; */
+}
+
+.modalWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .difficulty {
   font-size: 20px;
+  width: 100px;
+}
+
+.difficultyWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .timerValue {
   font-size: 20px;
+  width: 100px;
+}
+
+.timerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .start {
@@ -27,4 +61,78 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: white;
+  cursor: pointer;
+  font: 500 12px "Montserrat", sans-serif;
+  border: 1px solid black;
+  text-transform: uppercase;
+}
+
+.open {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  height: 50px;
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+}
+
+.animateOpen {
+  opacity: 0;
+  animation-name: spinBackwards;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes spinBackwards {
+  from {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+  align-self: flex-end;
+  position: relative;
+  margin-right: 15px;
+}
+.close:after {
+  content: "";
+  height: 30px;
+  border-left: 3px solid #fff;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 28px;
+}
+
+.close:before {
+  content: "";
+  height: 30px;
+  border-left: 3px solid #fff;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 28px;
+}
+
+@media screen and (max-width: 500px) {
+  .modal {
+    width: 90%;
+  }
 }
