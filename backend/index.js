@@ -27,7 +27,7 @@ io.on("connection", (socket) => {
       rooms[index].activeClient = socket.id;
       io.to(room).emit("setactive", true);
       io.to(room).emit("setplayer2ready", false);
-    } else if (rooms[index].clients.length === 2) {
+    } else if (rooms[index].clients.length > 1) {
       io.to(room).emit("setplayer2ready", true);
     }
   });
@@ -57,10 +57,14 @@ io.on("connection", (socket) => {
       rooms[roomIndex].activeClient = socket.id;
       io.to(roomName).emit("setactive", true);
       io.to(roomName).emit("setplayer2ready", false);
-    } else if (numOfClients === 2) {
-      io.to(roomName).emit("setplayer2ready", true);
     } else if (numOfClients === 0) {
       rooms.splice(roomIndex, 1);
+    } else {
+      if (rooms[roomIndex].activeClient === socket.id) {
+        rooms[roomIndex].activeClient = rooms[roomIndex].clients[0];
+        io.to(rooms[roomIndex].activeClient).emit("setactive", true);
+      }
+      io.to(roomName).emit("setplayer2ready", true);
     }
   });
 });

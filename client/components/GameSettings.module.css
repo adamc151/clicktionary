@@ -2,7 +2,7 @@
   position: absolute;
   margin: auto;
   top: 0;
-  bottom: 0;
+  bottom: calc(-100% - 250px);
   left: 0;
   right: 0;
   width: 70%;
@@ -10,20 +10,38 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 250px;
-  padding: 10px;
-  background: powderblue;
+  height: 220px;
+  padding: 20px;
+  background: #80e1de;
   font: 500 16px "Montserrat", sans-serif;
   text-transform: uppercase;
-  border-radius: 25px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  /* -webkit-transform: translate(0, -500%);
-  -ms-transform: translate(0, -500%);
-  transform: translate(0, -500%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out; */
+  border-radius: 5px;
+  box-shadow: 0 5px 10px #979797;
+  transition: bottom 200ms linear;
+  -webkit-transition: bottom 200ms linear;
+  color: #3d3d3c;
+}
+
+.startSwicthWrapper {
+}
+
+.animateClose {
+  bottom: calc(-100% - 250px);
+  -webkit-animation: slide-down 200ms linear; /* Safari 4+ */
+  -moz-animation: slide-down 200ms linear; /* Fx 5+ */
+  -o-animation: slide-down 200ms linear; /* Opera 12+ */
+  animation: slide-down 200ms linear; /* IE 10+, Fx 29+ */
+}
+
+.openStyle {
+  bottom: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #3d3d3c;
 }
 
 .modalWrapper {
@@ -31,62 +49,86 @@
   height: 100%;
   position: absolute;
   top: 0;
-  background: rgba(0, 0, 0, 0.1);
+  /* background: rgba(0, 0, 0, 0.1); */
 }
 
 .difficulty {
   font-size: 20px;
   width: 100px;
+  border: none;
+  border-radius: 5px;
+  color: #979797;
+  background: #f9f9f9;
 }
 
 .difficultyWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #3d3d3c;
 }
 
 .timerValue {
   font-size: 20px;
   width: 100px;
+  border: none;
+  border-radius: 5px;
+  color: #979797;
+  background: #f9f9f9;
 }
 
 .timerWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #3d3d3c;
 }
 
 .start {
   height: 50px;
-  display: flex;
+  width: 75%;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: #f9f9f9;
   cursor: pointer;
-  font-family: "Gloria Hallelujah", cursive;
-  font-size: 20px;
-  /* font: 500 12px "Montserrat", sans-serif; */
-  border: 1px solid black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  color: #979797;
   text-transform: uppercase;
-  border-radius: 20px;
+  border-radius: 5px;
+  border: none;
 }
 
-.open {
+.switchUser {
+  height: 50px;
+  width: 50px;
+}
+
+.startSwitchWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.open2 {
   position: absolute;
   bottom: 20px;
   right: 20px;
   z-index: 100;
   height: 50px;
-  animation-name: spin;
+  opacity: 0;
+  transition: opacity 500ms linear, transform 500ms;
+  -webkit-transition: opacity 500ms linear, transform 500ms;
+  /* animation-name: spin;
   animation-duration: 500ms;
-  animation-timing-function: linear;
+  animation-timing-function: linear; */
 }
 
 .animateOpen {
-  opacity: 0;
-  animation-name: spinBackwards;
+  opacity: 1;
+  transform: rotate(-180deg);
+  /* animation-name: spinBackwards;
   animation-duration: 500ms;
-  animation-timing-function: linear;
+  animation-timing-function: linear; */
 }
 
 @keyframes spin {
@@ -110,32 +152,33 @@
 }
 
 .close {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   align-self: flex-end;
-  position: relative;
-  margin-right: 15px;
+  position: absolute;
+  top: 18px;
+  right: 18px;
 }
 .close:after {
   content: "";
-  height: 30px;
-  border-left: 3px solid #fff;
+  height: 25px;
+  border-left: 3px solid #f9f9f9;
   position: absolute;
   transform: rotate(45deg);
-  left: 28px;
+  left: 12px;
 }
 
 .close:before {
   content: "";
-  height: 30px;
-  border-left: 3px solid #fff;
+  height: 25px;
+  border-left: 3px solid #f9f9f9;
   position: absolute;
   transform: rotate(-45deg);
-  left: 28px;
+  left: 12px;
 }
 
 @media screen and (max-width: 500px) {
   .modal {
-    width: 90%;
+    width: 80%;
   }
 }

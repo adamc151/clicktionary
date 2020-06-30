@@ -6,44 +6,48 @@ class GameSettings extends Component {
     super(props);
 
     this.state = {
-      open: true,
-      openIcon: true,
-      animateIcon: false,
+      open: false,
     };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ open: true });
+    }, 200);
   }
 
   render() {
     return (
       <>
-        {!this.state.openIcon && (
+        {
           <img
-            className={`${styles.open} ${
-              this.state.animateIcon ? styles.animateOpen : ""
+            className={`${styles.open2} ${
+              !this.state.open ? styles.animateOpen : ""
             }`}
             onClick={() => {
-              this.setState({ open: true, animateIcon: true });
-              setTimeout(() => {
-                this.setState({ openIcon: true });
-              }, 500);
+              this.setState({ open: true });
             }}
             src={"/gear.svg"}
           />
-        )}
-        {this.state.open && (
+        }
+        {
           <div className={styles.modalWrapper}>
-            <div className={styles.modal}>
+            <div
+              className={`${styles.modal} ${
+                this.state.open ? styles.openStyle : ""
+              }`}
+            >
               <div
                 className={styles.close}
                 onClick={() => {
                   this.setState({
                     open: false,
-                    openIcon: false,
-                    animateIcon: false,
                   });
                 }}
               />
+              <div className={styles.title}>GAME SETTINGS</div>
               <div className={styles.timerWrapper}>
-                Time in seconds:
+                Time (seconds):
                 <input
                   className={styles.timerValue}
                   type="number"
@@ -65,28 +69,44 @@ class GameSettings extends Component {
                   <option value="hard">Hard</option>
                 </select>
               </div>
-              <button
-                onClick={() => {
-                  this.props.onStart(
-                    this.timerValue.value,
-                    this.difficulty.value
-                  );
-                }}
-                className={styles.start}
-              >
-                START
-              </button>
-              <button
+              <div className={styles.startSwitchWrapper}>
+                <img
+                  onClick={() => {
+                    location.reload();
+                  }}
+                  className={styles.switchUser}
+                  src={"/switch_user.png"}
+                />
+                <button
+                  onClick={() => {
+                    this.props.onStart(
+                      this.timerValue.value,
+                      this.difficulty.value
+                    );
+                  }}
+                  className={styles.start}
+                >
+                  DRAW
+                </button>
+
+                {/* <button
                 onClick={() => {
                   location.reload();
                 }}
                 className={styles.start}
               >
-                Switch user
-              </button>
+                <img
+                  onClick={() => {
+                    location.reload();
+                  }}
+                  className={styles.switchUser}
+                  src={"/switch_user.png"}
+                />
+              </button> */}
+              </div>
             </div>
           </div>
-        )}
+        }
       </>
     );
   }

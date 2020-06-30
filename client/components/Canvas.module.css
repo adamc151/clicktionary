@@ -1,5 +1,6 @@
 .myWrapper {
   position: relative;
+  overflow: hidden;
 }
 
 .word {

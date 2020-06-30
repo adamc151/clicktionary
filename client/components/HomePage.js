@@ -1,76 +1,48 @@
 import React, { useState, useEffect, useRef, useImperativeHandle } from "react";
 import styles from "./HomePage.module.css";
 import { useRouter } from "next/router";
-import CanvasDraw from "react-canvas-draw";
-import logo from "./logo.json";
-import background from "./background5.jpg";
+// import CanvasDraw from "react-canvas-draw";
+// import logo from "./logo.json";
+// import background from "./background7.png";
 
-function usePrevious(value) {
-  const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
-}
+// function usePrevious(value) {
+//   const ref = useRef();
+//   useEffect(() => {
+//     ref.current = value;
+//   });
+//   return ref.current;
+// }
 
 const HomePage = ({}) => {
   const history = useRouter();
-  const canvasEl = useRef(null);
+  // const canvasEl = useRef(null);
 
   const [urlAppend, setUrlAppend] = useState("");
   const [urlPath, setUrlPath] = useState("");
 
-  const [canvasDimensions, setCanvasDimensions] = useState({
-    h: null,
-    w: null,
-  });
+  // const [canvasDimensions, setCanvasDimensions] = useState({
+  //   h: null,
+  //   w: null,
+  // });
 
   useEffect(() => {
-    setCanvasDimensions({ h: window.innerHeight, w: window.innerWidth });
+    // setCanvasDimensions({ h: window.innerHeight, w: window.innerWidth });
     setUrlAppend(`${Math.random().toString(36).substring(7)}`);
     setUrlPath(window.location.origin + window.location.pathname);
-    setTimeout(() => {
-      canvasEl.current &&
-        canvasEl.current.loadSaveData(JSON.stringify(logo), false);
-    }, 100);
+    // setTimeout(() => {
+    //   canvasEl.current &&
+    //     canvasEl.current.loadSaveData(JSON.stringify(logo), true);
+    // }, 100);
   }, []);
 
-  const canvasProps = {
-    ref: canvasEl,
-    onChange: () => {
-      if (canvasEl) {
-        const lines = canvasEl.current.getSaveData();
-      }
-    },
-    loadTimeOffset: 0,
-    lazyRadius: 0,
-    brushRadius: 1,
-    brushColor: "#444",
-    catenaryColor: "#0a0302",
-    gridColor: "rgba(150,150,150,0.17)",
-    hideGrid: false,
-    canvasWidth: canvasDimensions.w,
-    canvasHeight: canvasDimensions.h,
-    disabled: false,
-    imgSrc: "",
-    saveData: null,
-    immediateLoading: false,
-    hideInterface: true,
-    className: styles.canvas,
-  };
-
   return (
-    <div style={{ height: canvasDimensions.h, width: canvasDimensions.w }}>
-      <CanvasDraw {...canvasProps} />
-      {/* <img className={styles.clicktionary} src={"/clicktionary.png"} /> */}
+    <div className={styles.wrapper}>
+      <img src={"/background7.png"} className={styles.backgroundImage} />
 
       <div className={styles.homePageWrapper}>
+        <div className={styles.title}>Clicktionary</div>
         <div className={styles.onlineDrawingGame}>Online drawing game</div>
-        <div>
-          Get together with your friends and guess what they are drawing before
-          the time runs out!
-        </div>
-        <img className={styles.diagram} src={"/diagram3.svg"}></img>
+        <img className={styles.diagram} src={"/diagram4.svg"}></img>
         <div className={styles.urlTextWrapper}>
           <div className={styles.text}>
             Share this url with your friends and hit PLAY

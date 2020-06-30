@@ -6,15 +6,44 @@ export default function Home() {
     <div className="container">
       <Head>
         <meta charset="UTF-8" />
+        <title>Clicktionary - Online Drawing Game</title>
+        <meta name="title" content="Clicktionary - Online Drawing Game" />
+        <meta
+          name="description"
+          content="Fun real-time online drawing game for mobile. Draw the suggested words while your friends guess what it is before the timer runs out!"
+        />
         <meta
           name="viewport"
-          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
+        <meta
+          name="keywords"
+          content="Pictionary, Drawing, Game, Online, Fun, Quick, Draw, Work, Generator, Multiplayer, Mobile"
+        ></meta>
 
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff"></meta>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
           rel="stylesheet"
         ></link>
       </Head>

@@ -45,10 +45,6 @@ class Canvas extends Component {
   }
   setWord() {
     this.clearCanvas();
-    console.log(
-      "yoooo words[this.state.difficulty]",
-      words[this.state.difficulty].length
-    );
     const randomIndex = Math.floor(
       Math.random() * words[this.state.difficulty].length
     );
@@ -128,6 +124,7 @@ class Canvas extends Component {
     });
 
     this.socket.on("setplayer2ready", (data) => {
+      console.log("yoooo setplayer2ready", data);
       this.setState({ player2ready: JSON.parse(data) });
     });
 
@@ -153,7 +150,7 @@ class Canvas extends Component {
       brushColor: "#444",
       catenaryColor: "#0a0302",
       gridColor: "rgba(150,150,150,0.17)",
-      hideGrid: false,
+      hideGrid: true,
       canvasWidth: this.state.w,
       canvasHeight: this.state.h,
       disabled: !this.state.sending,
