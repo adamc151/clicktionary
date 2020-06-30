@@ -27,6 +27,6 @@ spec:
     spec:
       containers:
         - name: server
-          image: adamc151/pictionary-server
+          image: adamc151/clicktionary-server
           ports:
             - containerPort: 4001

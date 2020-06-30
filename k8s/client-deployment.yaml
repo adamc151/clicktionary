@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: adamc151/pictionary-client
+          image: adamc151/clicktionary-client
           ports:
             - containerPort: 3000
